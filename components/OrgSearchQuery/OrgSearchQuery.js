@@ -1,34 +1,9 @@
 import { useState } from "react";
 import { useLazyQuery, useQuery } from "@apollo/react-hooks";
-import gql from "graphql-tag";
+import { ORG_QUERY } from "../../queries";
+import { Input } from "../shared";
 
-export const ORG_QUERY = gql`
-  query($org: String!) {
-    organization(login: $org) {
-      name
-      avatarUrl
-      url
-      repositories(
-        first: 100
-        orderBy: { field: STARGAZERS, direction: DESC }
-      ) {
-        nodes {
-          name
-          stargazers {
-            totalCount
-          }
-          primaryLanguage {
-            name
-          }
-          pullRequests {
-            totalCount
-          }
-          url
-        }
-      }
-    }
-  }
-`;
+import "./OrgSearchQuery.scss";
 
 const OrgSearchQuery = props => {
   const [org, setOrg] = useState("");
@@ -52,7 +27,7 @@ const OrgSearchQuery = props => {
   return (
     <>
       <section>
-        <input
+        <Input
           placeholder="GitHub Organization"
           onChange={e => setOrg(e.target.value)}
           value={org}

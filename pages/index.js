@@ -1,5 +1,4 @@
-import App from "../components/App";
-import OrgSearchQuery from "../components/OrgSearchQuery";
+import { App, Org, OrgSearchQuery } from "../components";
 
 const Index = () => (
   <App>
@@ -14,30 +13,14 @@ const Index = () => (
         initialLoading
       }) => {
         console.log(data);
-        return initialLoad ? (
-          <div>
-            {initialLoading && <div>Loading</div>}
-            {initialError && <ErrorMessage message="Error fetching data" />}
-            {initialData && initialData.organization && (
-              <>
-                {initialData.organization.repositories.nodes.map(repo => (
-                  <p key={repo.name}>{repo.name}</p>
-                ))}
-              </>
-            )}
-          </div>
-        ) : (
-          <div>
-            {loading && <div>Loading</div>}
-            {error && <ErrorMessage message="Error fetching data" />}
-            {data && data.organization && (
-              <>
-                {data.organization.repositories.nodes.map(repo => (
-                  <p key={repo.name}>{repo.name}</p>
-                ))}
-              </>
-            )}
-          </div>
+        return (
+          <>
+            <Org
+              data={initialLoad ? initialData : data}
+              error={initialLoad ? initialError : error}
+              loading={initialLoad ? initialLoading : loading}
+            />
+          </>
         );
       }}
     </OrgSearchQuery>
