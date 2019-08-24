@@ -1,3 +1,9 @@
-main {
-  padding: 0 40px;
+@import "../../shared/mixins.scss";
+
+* {
+  font-family: "Raleway", sans-serif;
+}
+
+body {
+  margin: 0;
 }

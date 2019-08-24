@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useLazyQuery, useQuery } from "@apollo/react-hooks";
 import { ORG_QUERY } from "../queries";
-import { App, Org, SearchBox } from "../components";
+import { App, Org } from "../components";
 
 const Index = () => {
   const [initialLoad, setInitialLoad] = useState(true);
@@ -17,8 +17,7 @@ const Index = () => {
 
   console.log(data);
   return (
-    <App>
-      <SearchBox getOrg={getOrg} setInitialLoad={setInitialLoad} />
+    <App getOrg={getOrg} setInitialLoad={setInitialLoad}>
       <Org
         data={initialLoad ? initialData : data}
         error={initialLoad ? initialError : error}

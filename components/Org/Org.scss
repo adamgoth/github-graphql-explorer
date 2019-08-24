@@ -1,9 +1,28 @@
+@import "../../shared/mixins.scss";
+
 .Org {
-  display: flex;
+  padding: 0 20px;
+
+  &-header {
+    display: flex;
+  }
+
+  &-name {
+    margin: 0;
+    font-weight: bold;
+  }
 
   &-image {
-    height: 170px;
-    width: 170px;
+    display: flex;
+    flex-shrink: 0;
+    height: 100px;
+    width: 100px;
+    margin-right: 10px;
+
+    @include when-wider-than(sm) {
+      height: 170px;
+      width: 170px;
+    }
 
     img {
       height: 100%;
@@ -12,18 +31,30 @@
   }
 
   &-info {
-    &--top {
-    }
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
 
     ul {
       display: flex;
+      flex-direction: column;
       list-style-type: none;
       margin: 0;
       padding: 0;
+
+      @include when-wider-than(sm) {
+        flex-direction: row;
+      }
     }
 
     li {
-      margin-right: 20px;
+      display: flex;
+      align-items: center;
+      margin: 0 20px 5px 0;
+    }
+
+    &--icon {
+      margin-right: 5px;
     }
   }
 }

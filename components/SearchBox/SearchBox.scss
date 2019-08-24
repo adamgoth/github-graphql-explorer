@@ -1,4 +1,12 @@
 .SearchBox {
   display: flex;
+  align-items: center;
   width: 100%;
+
+  &-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin: auto 10px;
+  }
 }

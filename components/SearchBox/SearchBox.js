@@ -13,14 +13,21 @@ const SearchBox = ({ getOrg, setInitialLoad }) => {
   };
 
   return (
-    <section>
+    <section className="SearchBox">
       <Input
         placeholder="GitHub Organization"
         onChange={e => setOrg(e.target.value)}
         value={org}
         type="text"
       />
-      <button onClick={e => handleSearch(e)}>Search</button>
+      <button className="SearchBox-button" onClick={e => handleSearch(e)}>
+        <img
+          alt="search icon"
+          src="../../static/search.svg"
+          width="20px"
+          height="20px"
+        />
+      </button>
     </section>
   );
 };
