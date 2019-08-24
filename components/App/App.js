@@ -7,7 +7,7 @@ export default props => {
   return (
     <>
       <Head>
-        <title>GitHub Org Explorer</title>
+        <title>GitHub API Explorer</title>
         <link
           href="https://fonts.googleapis.com/css?family=Raleway:400,700&display=swap"
           rel="stylesheet"

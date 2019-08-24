@@ -15,6 +15,7 @@ export const ORG_QUERY = gql`
       ) {
         nodes {
           name
+          description
           stargazers {
             totalCount
           }

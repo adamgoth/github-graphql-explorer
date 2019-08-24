@@ -1,7 +1,40 @@
+@import "../../shared/mixins.scss";
+
 .Repositories {
+  margin-top: 20px;
+}
+
+.Repository {
+  border-radius: 5px;
+  padding: 3px;
+  margin-bottom: 15px;
+
+  &-name {
+    margin: 0 0 5px 0;
+  }
+
+  &-description {
+    margin: 2px 0 5px 0;
+  }
+
   ul {
+    display: flex;
     list-style-type: none;
     margin: 0;
     padding: 0;
+
+    @include when-wider-than(sm) {
+      flex-direction: row;
+    }
+  }
+
+  li {
+    display: flex;
+    align-items: center;
+    margin: 0 20px 5px 0;
+  }
+
+  &-icon {
+    margin-right: 5px;
   }
 }

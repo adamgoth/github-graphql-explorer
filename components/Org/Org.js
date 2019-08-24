@@ -1,5 +1,5 @@
 import "./Org.scss";
-import { Members, Repositories } from "../index";
+import { ErrorMessage, Members, Repositories } from "../index";
 
 const Org = ({ data, error, loading }) => (
   <div>
