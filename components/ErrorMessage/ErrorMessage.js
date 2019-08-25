@@ -1,6 +1,7 @@
+import PropTypes from "prop-types";
 import "./ErrorMessage.scss";
 
-const Error = ({ error }) => {
+const ErrorMessage = ({ error }) => {
   const firstError = error.graphQLErrors[0];
 
   return (
@@ -11,4 +12,8 @@ const Error = ({ error }) => {
   );
 };
 
-export default Error;
+ErrorMessage.propTypes = {
+  error: PropTypes.object
+};
+
+export default ErrorMessage;

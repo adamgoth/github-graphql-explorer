@@ -1,4 +1,6 @@
+import PropTypes from "prop-types";
 import Link from "next/link";
+
 import "./Repositories.scss";
 
 const Repositories = ({ repos, org }) => {
@@ -55,6 +57,11 @@ const Repositories = ({ repos, org }) => {
       })}
     </div>
   );
+};
+
+Repositories.propTypes = {
+  repos: PropTypes.array,
+  org: PropTypes.string
 };
 
 export default Repositories;

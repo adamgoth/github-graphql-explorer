@@ -1,3 +1,5 @@
+import PropTypes from "prop-types";
+
 import "./PullRequest.scss";
 
 const PullRequest = ({ data }) => {
@@ -45,6 +47,10 @@ const PullRequest = ({ data }) => {
       </div>
     </div>
   );
+};
+
+PullRequest.propTypes = {
+  data: PropTypes.object
 };
 
 export default PullRequest;

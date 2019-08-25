@@ -1,3 +1,5 @@
+import PropTypes from "prop-types";
+
 import "./Members.scss";
 
 const Members = ({ members }) => {
@@ -14,6 +16,10 @@ const Members = ({ members }) => {
       })}
     </div>
   );
+};
+
+Members.propTypes = {
+  members: PropTypes.object
 };
 
 export default Members;

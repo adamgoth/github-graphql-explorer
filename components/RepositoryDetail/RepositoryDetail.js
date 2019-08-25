@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import Link from "next/link";
 import { PullRequest } from "../../components";
 
@@ -62,6 +63,11 @@ const RepositoryDetail = ({ repo, org }) => {
       })}
     </div>
   );
+};
+
+RepositoryDetail.propTypes = {
+  repo: PropTypes.object,
+  org: PropTypes.string
 };
 
 export default RepositoryDetail;

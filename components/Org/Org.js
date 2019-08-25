@@ -1,5 +1,7 @@
-import "./Org.scss";
+import PropTypes from "prop-types";
 import { Members, Repositories } from "../index";
+
+import "./Org.scss";
 
 const Org = ({ org }) => (
   <div>
@@ -53,5 +55,9 @@ const Org = ({ org }) => (
     </div>
   </div>
 );
+
+Org.propTypes = {
+  org: PropTypes.object
+};
 
 export default Org;

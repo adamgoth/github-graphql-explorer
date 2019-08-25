@@ -48,10 +48,6 @@
       list-style-type: none;
       margin: 0;
       padding: 0;
-
-      @include when-wider-than(sm) {
-        flex-direction: row;
-      }
     }
 
     li {

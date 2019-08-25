@@ -1,5 +1,6 @@
-import { Header } from "../";
+import PropTypes from "prop-types";
 import Head from "next/head";
+import { Header } from "../";
 
 import "./App.scss";
 
@@ -17,4 +18,8 @@ export default props => {
       <main>{props.children}</main>
     </>
   );
+};
+
+App.propTypes = {
+  loading: PropTypes.bool
 };

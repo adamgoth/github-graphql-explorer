@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import Link from "next/link";
 import { LoadingSpinner } from "../";
 
@@ -26,7 +27,8 @@ const RandomOrgButton = ({ loading }) => {
     "dropbox",
     "sendgrid",
     "twilio",
-    "atlassian"
+    "atlassian",
+    "sprucelabsai"
   ];
 
   const randomOrg = () => {
@@ -45,6 +47,10 @@ const RandomOrgButton = ({ loading }) => {
       )}
     </section>
   );
+};
+
+RandomOrgButton.propTypes = {
+  loading: PropTypes.boolean
 };
 
 export default RandomOrgButton;
