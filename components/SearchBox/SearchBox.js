@@ -1,28 +1,32 @@
 import { useState } from "react";
+import { useRouter } from "next/router";
 import { Input } from "../";
 
 import "./SearchBox.scss";
 
-const SearchBox = ({ getOrg }) => {
+const SearchBox = () => {
+  const router = useRouter();
   const [org, setOrg] = useState("");
 
   const handleSearch = e => {
     e.preventDefault();
-    if (org === "") return;
-    getOrg({ variables: { org } });
-    setOrg("");
+    router.push("/[org]", `/${org}`);
   };
 
   return (
     <section>
-      <form className="SearchBox" onSubmit={handleSearch}>
+      <form className="SearchBox" onSubmit={e => handleSearch(e)}>
         <Input
           placeholder="Search Organizations"
           onChange={e => setOrg(e.target.value)}
           value={org}
           type="text"
         />
-        <button className="SearchBox-button" type="submit">
+        <button
+          className="SearchBox-button"
+          type="submit"
+          onClick={handleSearch}
+        >
           <img
             alt="search icon"
             src="../../static/search.svg"

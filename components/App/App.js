@@ -13,7 +13,7 @@ export default props => {
           rel="stylesheet"
         />
       </Head>
-      <Header getOrg={props.getOrg} orgLoading={props.orgLoading} />
+      <Header loading={props.loading} />
       <main>{props.children}</main>
     </>
   );

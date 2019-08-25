@@ -1,8 +1,9 @@
+import Link from "next/link";
 import { LoadingSpinner } from "../";
 
 import "./RandomOrgButton.scss";
 
-const RandomOrgButton = ({ getOrg, orgLoading }) => {
+const RandomOrgButton = ({ loading }) => {
   const randomOrgs = [
     "adobe",
     "netflix",
@@ -33,18 +34,14 @@ const RandomOrgButton = ({ getOrg, orgLoading }) => {
     return randomOrgs[index];
   };
 
-  const getRandomOrg = e => {
-    e.preventDefault();
-    getOrg({
-      variables: { org: randomOrg() }
-    });
-  };
   return (
     <section className="RandomOrgButton">
-      {orgLoading ? (
+      {loading ? (
         <LoadingSpinner />
       ) : (
-        <button onClick={e => getRandomOrg(e)}>View Random Organization</button>
+        <Link href={"/[org]"} as={`/${randomOrg()}`}>
+          View Random Organization
+        </Link>
       )}
     </section>
   );

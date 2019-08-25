@@ -1,6 +1,7 @@
+import Link from "next/link";
 import "./Repositories.scss";
 
-const Repositories = ({ repos }) => {
+const Repositories = ({ repos, org }) => {
   return (
     <div className="Repositories">
       {repos.map(repo => {
@@ -13,7 +14,9 @@ const Repositories = ({ repos }) => {
         } = repo;
         return (
           <div className="Repository" key={repo.name}>
-            <h4 className="Repository-name">{name}</h4>
+            <Link href="/[org]/[name]" as={`/${org}/${name}`}>
+              <h4 className="Repository-name">{name}</h4>
+            </Link>
             <p className="Repository-description">{description}</p>
             <ul>
               <li>

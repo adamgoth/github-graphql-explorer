@@ -6,7 +6,9 @@ const Members = ({ members }) => {
       {members.map(m => {
         return (
           <div className="Members-avatar" key={m.avatarUrl}>
-            <img src={m.avatarUrl} alt={m.name} />
+            <a href={m.url} target="_blank" rel="noreferrer">
+              <img src={m.avatarUrl} alt={m.name} />
+            </a>
           </div>
         );
       })}

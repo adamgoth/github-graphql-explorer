@@ -11,12 +11,15 @@
     width: 180px;
   }
 
-  button {
+  a {
     background: none;
     border: none;
     cursor: pointer;
     font-size: 12px;
     padding: 0;
+    text-decoration: none;
+    color: black;
+    text-align: center;
 
     @include when-wider-than(sm) {
       font-size: 14px;
