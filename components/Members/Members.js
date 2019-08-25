@@ -18,6 +18,10 @@ const Members = ({ members }) => {
   );
 };
 
+Members.defaultProps = {
+  members: []
+};
+
 Members.propTypes = {
   members: PropTypes.array
 };

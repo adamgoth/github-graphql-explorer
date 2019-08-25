@@ -59,6 +59,10 @@ const Repositories = ({ repos, org }) => {
   );
 };
 
+Repositories.defaultProps = {
+  repos: []
+};
+
 Repositories.propTypes = {
   repos: PropTypes.array,
   org: PropTypes.string

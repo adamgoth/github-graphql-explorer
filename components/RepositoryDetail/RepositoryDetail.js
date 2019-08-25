@@ -7,7 +7,7 @@ import "./RepositoryDetail.scss";
 const RepositoryDetail = ({ repo, org }) => {
   return (
     <div className="RepositoryDetail">
-      <h6 className="RepositoryDetail-title">Repository Information</h6>
+      <h6 className="RepositoryDetail-title">Repository Info</h6>
 
       <span className="RepositoryDetail-name">
         <Link href={"/[org]"} as={`/${org}`}>
@@ -63,6 +63,17 @@ const RepositoryDetail = ({ repo, org }) => {
       })}
     </div>
   );
+};
+
+RepositoryDetail.defaultProps = {
+  repo: {
+    languages: {
+      nodes: []
+    },
+    pullRequests: {
+      nodes: []
+    }
+  }
 };
 
 RepositoryDetail.propTypes = {
