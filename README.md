@@ -8,8 +8,7 @@ Features include being able to:
 - Fetch a random open-source organization
 - View repository details
 
-[Watch Demo](http://www.giphy.com/gifs/WOqzAcNSbZlX4cDad1)
-![](http://www.giphy.com/gifs/WOqzAcNSbZlX4cDad1)
+![](https://media.giphy.com/media/WOqzAcNSbZlX4cDad1/giphy.gif)
 
 ## Running locally
 
