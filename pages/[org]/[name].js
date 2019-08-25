@@ -1,6 +1,6 @@
 import { useRouter } from "next/router";
 import { useQuery } from "@apollo/react-hooks";
-import { REPO_QUERY } from "../../queries";
+import { REPO_QUERY } from "../../shared/queries";
 import { App, ErrorMessage, RepositoryDetail } from "../../components";
 
 const RepositoryDetailPage = () => {

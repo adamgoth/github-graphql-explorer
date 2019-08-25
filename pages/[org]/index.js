@@ -1,6 +1,6 @@
 import { useRouter } from "next/router";
 import { useQuery } from "@apollo/react-hooks";
-import { ORG_QUERY } from "../../queries";
+import { ORG_QUERY } from "../../shared/queries";
 import { App, ErrorMessage, Org } from "../../components";
 
 const Index = () => {

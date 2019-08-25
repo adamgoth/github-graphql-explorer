@@ -50,7 +50,7 @@ const RandomOrgButton = ({ loading }) => {
 };
 
 RandomOrgButton.propTypes = {
-  loading: PropTypes.boolean
+  loading: PropTypes.bool
 };
 
 export default RandomOrgButton;

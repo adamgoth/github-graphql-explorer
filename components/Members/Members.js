@@ -19,7 +19,7 @@ const Members = ({ members }) => {
 };
 
 Members.propTypes = {
-  members: PropTypes.object
+  members: PropTypes.array
 };
 
 export default Members;

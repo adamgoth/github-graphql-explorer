@@ -4,7 +4,7 @@ import { Header } from "../";
 
 import "./App.scss";
 
-export default props => {
+const App = props => {
   return (
     <>
       <Head>
@@ -23,3 +23,5 @@ export default props => {
 App.propTypes = {
   loading: PropTypes.bool
 };
+
+export default App;
