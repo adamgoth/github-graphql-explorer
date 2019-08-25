@@ -6,22 +6,22 @@ import { App, Org } from "../components";
 const Index = () => {
   const [initialLoad, setInitialLoad] = useState(true);
 
-  const {
-    loading: initialLoading,
-    error: initialError,
-    data: initialData
-  } = useQuery(ORG_QUERY, {
+  // this will execute server-side when page loads
+  const { error: initialError, data: initialData } = useQuery(ORG_QUERY, {
     variables: { org: "sprucelabsai" }
   });
-  const [getOrg, { loading, error, data }] = useLazyQuery(ORG_QUERY, {});
 
-  console.log(data);
+  // this will execute on manual fetch
+  const [getOrg, { loading, error, data }] = useLazyQuery(ORG_QUERY, {
+    onCompleted: () => setInitialLoad(false),
+    onError: () => setInitialLoad(false)
+  });
+
   return (
-    <App getOrg={getOrg} setInitialLoad={setInitialLoad}>
+    <App getOrg={getOrg} orgLoading={loading}>
       <Org
         data={initialLoad ? initialData : data}
-        error={initialLoad ? initialError : error}
-        loading={initialLoad ? initialLoading : loading}
+        error={initialLoad ? (initialError ? initialError : error) : error}
       />
     </App>
   );

@@ -1,7 +1,13 @@
 @import "../../shared/mixins.scss";
 
 .Org {
-  padding: 0 20px;
+  padding: 10px 20px;
+
+  &-title {
+    margin: 0 0 15px 0;
+    text-transform: uppercase;
+    color: #00000073;
+  }
 
   &-header {
     display: flex;
@@ -34,6 +40,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
+    overflow-y: scroll;
 
     ul {
       display: flex;

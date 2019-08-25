@@ -1,6 +1,25 @@
-button {
-  background: none;
+@import "../../shared/mixins.scss";
+
+.RandomOrgButton {
+  display: flex;
+  justify-content: center;
+  height: 30px;
+  width: 120px;
   border: none;
-  cursor: pointer;
-  font-size: 14px;
+
+  @include when-wider-than(sm) {
+    width: 180px;
+  }
+
+  button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 12px;
+    padding: 0;
+
+    @include when-wider-than(sm) {
+      font-size: 14px;
+    }
+  }
 }

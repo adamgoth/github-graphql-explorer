@@ -2,15 +2,11 @@ import { SearchBox, RandomOrgButton } from "../";
 
 import "./Header.scss";
 
-const Header = ({ getOrg, setInitialLoad }) => {
+const Header = ({ getOrg, orgLoading }) => {
   return (
     <header className="Header">
-      <RandomOrgButton getOrg={getOrg} setInitialLoad={setInitialLoad} />
-      <SearchBox
-        className="Header-searchBox"
-        getOrg={getOrg}
-        setInitialLoad={setInitialLoad}
-      />
+      <SearchBox className="Header-searchBox" getOrg={getOrg} />
+      <RandomOrgButton getOrg={getOrg} orgLoading={orgLoading} />
     </header>
   );
 };

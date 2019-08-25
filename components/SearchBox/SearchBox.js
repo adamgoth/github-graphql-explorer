@@ -1,23 +1,23 @@
 import { useState } from "react";
-import { Input } from "../shared";
+import { Input } from "../";
 
 import "./SearchBox.scss";
 
-const SearchBox = ({ getOrg, setInitialLoad }) => {
+const SearchBox = ({ getOrg }) => {
   const [org, setOrg] = useState("");
 
   const handleSearch = e => {
     e.preventDefault();
     if (org === "") return;
-    setInitialLoad(false);
     getOrg({ variables: { org } });
+    setOrg("");
   };
 
   return (
     <section>
       <form className="SearchBox" onSubmit={handleSearch}>
         <Input
-          placeholder="GitHub Organization"
+          placeholder="Search Organizations"
           onChange={e => setOrg(e.target.value)}
           value={org}
           type="text"

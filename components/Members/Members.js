@@ -5,7 +5,7 @@ const Members = ({ members }) => {
     <div className="Members">
       {members.map(m => {
         return (
-          <div className="Members-avatar">
+          <div className="Members-avatar" key={m.avatarUrl}>
             <img src={m.avatarUrl} alt={m.name} />
           </div>
         );

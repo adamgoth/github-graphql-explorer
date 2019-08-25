@@ -1,6 +1,8 @@
+import { LoadingSpinner } from "../";
+
 import "./RandomOrgButton.scss";
 
-const RandomOrgButton = ({ getOrg, setInitialLoad }) => {
+const RandomOrgButton = ({ getOrg, orgLoading }) => {
   const randomOrgs = [
     "adobe",
     "netflix",
@@ -12,7 +14,18 @@ const RandomOrgButton = ({ getOrg, setInitialLoad }) => {
     "ibm",
     "microsoft",
     "cloudflare",
-    "alibaba"
+    "alibaba",
+    "facebook",
+    "google",
+    "waymo-research",
+    "ethereum",
+    "apache",
+    "bitcoin",
+    "unicef",
+    "dropbox",
+    "sendgrid",
+    "twilio",
+    "atlassian"
   ];
 
   const randomOrg = () => {
@@ -22,10 +35,19 @@ const RandomOrgButton = ({ getOrg, setInitialLoad }) => {
 
   const getRandomOrg = e => {
     e.preventDefault();
-    getOrg({ variables: { org: randomOrg() } });
-    setInitialLoad(false);
+    getOrg({
+      variables: { org: randomOrg() }
+    });
   };
-  return <button onClick={e => getRandomOrg(e)}>View Random Org</button>;
+  return (
+    <section className="RandomOrgButton">
+      {orgLoading ? (
+        <LoadingSpinner />
+      ) : (
+        <button onClick={e => getRandomOrg(e)}>View Random Organization</button>
+      )}
+    </section>
+  );
 };
 
 export default RandomOrgButton;

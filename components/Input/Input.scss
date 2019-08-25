@@ -1,0 +1,19 @@
+@import "../../shared/mixins.scss";
+
+.Input {
+  height: 30px;
+  font-size: 12px;
+  border: none;
+  border-bottom: solid 1px black;
+  outline: 0;
+  padding: 0px 5px;
+
+  @include when-wider-than(sm) {
+    font-size: 14px;
+  }
+}
+
+::placeholder {
+  color: lightgray;
+  opacity: 1;
+}

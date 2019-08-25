@@ -1,12 +1,8 @@
 @import "../../shared/mixins.scss";
 
-.Repositories {
-  margin-top: 20px;
-}
-
 .Repository {
   border-radius: 5px;
-  padding: 3px;
+  padding: 0 2px;
   margin-bottom: 15px;
 
   &-name {
