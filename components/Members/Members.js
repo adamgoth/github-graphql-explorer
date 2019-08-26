@@ -4,7 +4,7 @@ import "./Members.scss";
 
 const Members = ({ members }) => {
   return (
-    <div className="Members">
+    <section className="Members">
       {members.map(m => {
         return (
           <div className="Members-avatar" key={m.avatarUrl}>
@@ -14,7 +14,7 @@ const Members = ({ members }) => {
           </div>
         );
       })}
-    </div>
+    </section>
   );
 };
 

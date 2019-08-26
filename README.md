@@ -16,5 +16,5 @@ To run locally you will need to authenticate with GitHub by generating a persona
 
 1. Clone the repo.
 2. In the project directory, run `npm install`.
-3. Rename the `config-defaults.json` file to `config.json` and copy your token value into the `accessToken` property.
+3. Create a `config.json` file in the root directory and copy the contents of `config-defaults.json`. Put your token value into the `accessToken` property.
 4. Run `npm run dev` to start the application. By default, the application will run on `localhost:3000`.

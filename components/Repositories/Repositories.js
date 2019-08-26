@@ -5,7 +5,7 @@ import "./Repositories.scss";
 
 const Repositories = ({ repos, org }) => {
   return (
-    <div className="Repositories">
+    <section className="Repositories">
       {repos.map(repo => {
         const {
           description,
@@ -55,7 +55,7 @@ const Repositories = ({ repos, org }) => {
           </div>
         );
       })}
-    </div>
+    </section>
   );
 };
 
